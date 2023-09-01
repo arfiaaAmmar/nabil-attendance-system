@@ -5,6 +5,7 @@
     "module": "CommonJS",
     "composite": true,
     "outDir": "dist",
+    "rootDir": "./",
     "strict": true,
     "esModuleInterop": true,
     "noEmit": false,

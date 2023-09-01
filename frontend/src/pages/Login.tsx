@@ -7,7 +7,7 @@ import { getAdminData, loginAdmin } from "../api/adminApi";
 import websiteLogo from "../assets/app_icon.png";
 import bgImage from "../assets/login_bg.jpg";
 import { AuthContext } from "../context/AuthContext";
-import { Admin } from "../../../types/types";
+import { IAdmin } from "shared-types/types";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
@@ -29,7 +29,7 @@ const Login = () => {
     }
     try {
       await loginAdmin(email, password);
-      const data = (await getAdminData()) as Admin;
+      const data = (await getAdminData()) as IAdmin;
       sessionStorage.setItem("userEmail", data.email);
       sessionStorage.setItem("userName", data.name);
       setUser(data);

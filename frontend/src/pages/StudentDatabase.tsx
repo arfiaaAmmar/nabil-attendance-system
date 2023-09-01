@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Student } from "../types/types";
 import { getAllStudents, registerStudent } from "../api/studentDbApi";
-import { handleUploadExcel } from "../utils/handleUploadExcel";
+import { handleUploadExcelForStudentRegistration } from "../utils/handleUploadExcel";
 import SearchBox from "../components/SearchBox";
 import { Button } from "@mui/material";
 
@@ -101,7 +101,7 @@ const StudentDatabase = () => {
 
       if(selectedFile){
         console.log('Selected file', selectedFile);
-        handleUploadExcel(selectedFile)
+        handleUploadExcelForStudentRegistration(selectedFile)
       } else {
         console.log('No file selected,');
       }

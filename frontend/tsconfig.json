@@ -19,6 +19,6 @@
     "noEmit": false,
     "jsx": "react-jsx"
   },
-  "include": ["./src/**/*.ts", "./src/**/*.tsx", "../backend/src/model/model.ts"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "../shared-types/*.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -83,7 +83,7 @@ export const getAllClassRecords = async (req: Request, res: Response) => {
 };
 
 export const updateClassRecord = async (req: Request, res: Response) => {
-  const { classId, itemType } = req.params;
+  const { classId } = req.params;
   const updatedData = req.body; // Updated data can contain both student and class details
 
   try {
@@ -93,29 +93,14 @@ export const updateClassRecord = async (req: Request, res: Response) => {
       return res.status(404).json({ message: "Class record not found" });
     }
 
-    if (itemType === "studentAttendance") {
-      const studentIdToUpdate = updatedData.studentId;
-      const studentIndex = classRecord.attendance.findIndex(
-        (attendance) => attendance.studentId === studentIdToUpdate
-      );
-
-      if (studentIndex === -1) {
-        return res
-          .status(404)
-          .json({ message: "Student not found in attendance list" });
-      }
-
-      // Update student's attendance time
-      classRecord.attendance[studentIndex].attendanceTime =
-        updatedData.attendanceTime;
-    } else if (itemType === "classInfo") {
-      // Update class details
-      classRecord.lecturer = updatedData.lecturer;
-      classRecord.course = updatedData.course;
-      classRecord.date = updatedData.date;
-      classRecord.startTime = updatedData.startTime;
-      classRecord.endTime = updatedData.endTime;
-    }
+    // Update class details
+    classRecord.lecturer = updatedData.lecturer;
+    classRecord.classroom = updatedData.classroom;
+    classRecord.course = updatedData.course;
+    classRecord.date = updatedData.date;
+    classRecord.startTime = updatedData.startTime;
+    classRecord.endTime = updatedData.endTime;
+    classRecord.attendance = updatedData.attendance;
 
     // Save updated class record
     await classRecord.save();

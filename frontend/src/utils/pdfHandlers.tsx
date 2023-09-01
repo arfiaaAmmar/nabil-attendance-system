@@ -1,4 +1,3 @@
-import { IClassRecord } from "../../../backend/src/model/model";
 import {
   Page,
   View,
@@ -6,6 +5,7 @@ import {
   Document,
   StyleSheet
 } from "@react-pdf/renderer";
+import { IClassRecord } from "shared-types/types";
 
 //make this for Attendance Report first then afterwards make it generic
 const styles = StyleSheet.create({

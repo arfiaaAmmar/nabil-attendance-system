@@ -44,7 +44,7 @@ app.post("/post-class-record", postClassRecord);
 app.post("/post-attendance/:classId", postAttendance)
 app.get("/get-class-record/:classId", getClassRecord);
 app.get("/get-all-class-records", getAllClassRecords);
-app.put("/update-class-record/:classId/:itemType", updateClassRecord);
+app.put("/update-class-record/:classId", updateClassRecord);
 app.delete("/delete-class-record/:classId", deleteClassRecord);
 app.delete("/delete-attendance/:classId", deleteAttendanceRecord);
 

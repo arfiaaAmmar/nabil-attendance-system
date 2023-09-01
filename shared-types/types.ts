@@ -6,7 +6,7 @@ export type CollegeCourses =
 export type Classrooms = "Classroom 1" | "Classroom 2" | "Classroom 3";
 
 //Student DB
-export type Admin = {
+export type IAdmin = {
   _id: string;
   email: string;
   name: string;
@@ -14,7 +14,7 @@ export type Admin = {
   phone: number;
 };
 
-export type Student = {
+export type IStudent = {
   studentId: string;
   name: string;
   email: string;
@@ -23,13 +23,13 @@ export type Student = {
 };
 
 //Class Session / Class History
-export type StudentAttendance = {
+export type IStudentAttendance = {
   studentName: string;
   studentId: string;
   attendanceTime: string;
 };
 
-export type ClassRecord = {
+export type IClassRecord = {
   classId: string;
   lecturer: string | null;
   classroom: Classrooms | string;
@@ -37,5 +37,5 @@ export type ClassRecord = {
   date: string;
   startTime: string;
   endTime: string;
-  attendance?: StudentAttendance[];
+  attendance?: IStudentAttendance[];
 };

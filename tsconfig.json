@@ -1,15 +1,11 @@
 {
     "compilerOptions": {
         "baseUrl": ".",        // Base URL for module resolution
-        "paths": {
-          "types/*": ["./types/*"]      // Map all imports to the 'types' directory
-        }
       },
     "references": [
         { "path": "./backend/"},
         { "path": "./frontend/"},
     ],
-    "files": [],
     "include": ["./types/**/*.d.ts"],
     "exclude": ["./node_modules"]
 }

@@ -1,3 +1,4 @@
+import { IClassRecord } from "backend/src/model/model";
 import { StudentAttendance, ClassRecord } from "../types/types";
 
 const API_BASE_URL = "http://localhost:8888";
@@ -63,12 +64,11 @@ export const getClassRecord = async (_id: string | undefined) => {
 
 export const updateClassRecord = async (
   classId: string,
-  itemType: "classInfo" | "studentAttendance",
-  data: Pick<ClassRecord, "attendance">
+  data: IClassRecord
 ) => {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/update-class-record/${classId}/${itemType}`,
+      `${API_BASE_URL}/update-class-record/${classId}`,
       {
         method: "PUT",
         headers: {
